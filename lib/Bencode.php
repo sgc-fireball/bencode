@@ -72,6 +72,9 @@ class Bencode
         }
 
         switch ($tokens[$i]) {
+        case "0":
+            $i+=1;
+            return null;
         case "d":
             $dict = array();
             while (isset($tokens[++$i])) {
